@@ -75,16 +75,19 @@ class QuoteBuilderViewController: UIViewController, AddQuoteToTable {
     
     func generateImage(){
         self.apiManager.getImage { (data) in
+            DispatchQueue.main.async() {
             self.quoteImage.image = UIImage(data: data)
+            }
         }
     }
     
     func generateQuote(){
         self.apiManager.getQuote { (quote, author) in
-            print(quote)
-            print(author)
-            self.quoteText.text = quote
-            self.quoteAuthor.text = author
+            DispatchQueue.main.async() {
+                self.quoteText.text = quote
+                self.quoteAuthor.text = author
+            }
+            
         }
     }
 

@@ -14,13 +14,7 @@ class APIManager {
     
     //MARK: API getQuote:
     func getQuote(completion: @escaping (String, String)->Void){
-        /* Configure session, choose between:
-         * defaultSessionConfiguration
-         * ephemeralSessionConfiguration
-         * backgroundSessionConfigurationWithIdentifier:
-         And set session-wide properties, such as: HTTPAdditionalHeaders,
-         HTTPCookieAcceptPolicy, requestCachePolicy or timeoutIntervalForRequest.
-         */
+
         let sessionConfig = URLSessionConfiguration.default
         
         /* Create session, and optionally set a URLSessionDelegate. */
@@ -64,7 +58,7 @@ class APIManager {
             }
         })
         task.resume()
-        session.finishTasksAndInvalidate()
+  //      session.finishTasksAndInvalidate()
     }
 
 
@@ -76,13 +70,7 @@ class APIManager {
     //MARK: API GetImage:
 
     func getImage(completion: @escaping (Data)->Void){
-    /* Configure session, choose between:
-     * defaultSessionConfiguration
-     * ephemeralSessionConfiguration
-     * backgroundSessionConfigurationWithIdentifier:
-     And set session-wide properties, such as: HTTPAdditionalHeaders,
-     HTTPCookieAcceptPolicy, requestCachePolicy or timeoutIntervalForRequest.
-     */
+
     let sessionConfig = URLSessionConfiguration.default
     
     /* Create session, and optionally set a URLSessionDelegate. */
@@ -112,7 +100,7 @@ class APIManager {
         }
     })
     task.resume()
-    session.finishTasksAndInvalidate()
+ //   session.finishTasksAndInvalidate()
 }
 
 
