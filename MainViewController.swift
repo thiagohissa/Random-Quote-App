@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddQuoteToTable {
 
     @IBOutlet weak var myTableView: UITableView!
     var apiManager = APIManager()
-    var arrayOfQuotes: [Quote] = []
+   // var arrayOfQuotes: [Quote] = []
+    
+    let realm = try! Realm() // [1]
+    var arrayOfQuotes: Results<Quote> { // [2]
+        get {
+            return realm.objects(Quote.self)
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -39,10 +47,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: AddQuoteToTable Protocol
     func saveQuote(quoteText: String, quoteAuthor: String, quotePhoto: UIImage){
-        let newQuote = Quote.init(quoteText: quoteText,
-                                  quoteAuthor: quoteAuthor,
-                                  quotePhoto: quotePhoto)
-        self.arrayOfQuotes.append(newQuote)
+//        let newQuote = Quote.init(quoteText: quoteText,
+//                                  quoteAuthor: quoteAuthor,
+//                                  quotePhoto: quotePhoto)
+//        self.arrayOfQuotes.append(newQuote)
+        let newQuote = Quote()
+        newQuote.quoteText = quoteText
+        newQuote.quoteAuthor = quoteAuthor
+        
+        try! realm.write{
+            realm.add(newQuote)
+        }
+        
         myTableView.reloadData()
     }
     
@@ -80,7 +96,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            arrayOfQuotes.remove(at: indexPath.row)
+       
+            if (editingStyle == .delete){
+                let quoteToDelete = arrayOfQuotes[indexPath.row]
+                try! self.realm.write({
+                    self.realm.delete(quoteToDelete)
+                })
+            }
+            
             myTableView.reloadData()
         }
     }

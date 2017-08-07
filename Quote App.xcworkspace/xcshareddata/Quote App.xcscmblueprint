@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7B85C6D770B74B4A86518FA9D190D2CA89B8D3EB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0C403613E9B3B5C85A090F04FADA453BF2A68240" : 9223372036854775807,
+    "7B85C6D770B74B4A86518FA9D190D2CA89B8D3EB" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5064BB6A-46A2-4748-B02C-803007861A4F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0C403613E9B3B5C85A090F04FADA453BF2A68240" : "",
+    "7B85C6D770B74B4A86518FA9D190D2CA89B8D3EB" : "Quote%20App\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Quote App",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Quote App.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:thiagohissa\/Threelow.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0C403613E9B3B5C85A090F04FADA453BF2A68240"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:thiagohissa\/Quote-App.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7B85C6D770B74B4A86518FA9D190D2CA89B8D3EB"
+    }
+  ]
+}
