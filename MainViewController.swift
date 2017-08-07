@@ -12,7 +12,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var myTableView: UITableView!
     var apiManager = APIManager()
-    
+    var arrayOfQuotes: [Quote] = []
     
     
     override func viewDidLoad() {
@@ -26,14 +26,24 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         performSegue(withIdentifier: "SegueToQuoteBuilder", sender: sender)
     }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueToQuoteBuilder" {
+            let nav = segue.destination as! UINavigationController
+            let dvc = nav.viewControllers[0] as! QuoteBuilderViewController
+            dvc.delegate = self
+        }
+    }
+
     
     
     
     //MARK: AddQuoteToTable Protocol
-    func greeting(message:String){
-        print("\(message)")
+    func saveQuote(quoteText: String, quoteAuthor: String, quotePhoto: UIImage){
+        let newQuote = Quote.init(quoteText: quoteText,
+                                  quoteAuthor: quoteAuthor,
+                                  quotePhoto: quotePhoto)
+        self.arrayOfQuotes.append(newQuote)
+        myTableView.reloadData()
     }
     
 
@@ -53,16 +63,27 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return arrayOfQuotes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CustomTableViewCell = myTableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
-        cell.quoteLabel.text = "hello"
-        cell.authorLabel.text = "author"
+        let quote = self.arrayOfQuotes[indexPath.row]
+        cell.quoteLabel.text = quote.quoteText
+        cell.authorLabel.text = quote.quoteAuthor
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            arrayOfQuotes.remove(at: indexPath.row)
+            myTableView.reloadData()
+        }
+    }
     
     
     

@@ -14,7 +14,6 @@
 		7E3E6BD11F38DC4800AF718C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E6BD01F38DC4800AF718C /* CustomTableViewCell.swift */; };
 		7E3E6BD31F38DCEB00AF718C /* QuoteBuilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3E6BD21F38DCEB00AF718C /* QuoteBuilderViewController.swift */; };
 		7EC75F631F38E447004E29DF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC75F621F38E447004E29DF /* APIManager.swift */; };
-		7EC75F651F38E464004E29DF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC75F641F38E464004E29DF /* Photo.swift */; };
 		7EC75F671F38E46E004E29DF /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC75F661F38E46E004E29DF /* Quote.swift */; };
 		7EC75F6C1F38EA41004E29DF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC75F6B1F38EA41004E29DF /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		7E3E6BD01F38DC4800AF718C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		7E3E6BD21F38DCEB00AF718C /* QuoteBuilderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteBuilderViewController.swift; sourceTree = "<group>"; };
 		7EC75F621F38E447004E29DF /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
-		7EC75F641F38E464004E29DF /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		7EC75F661F38E46E004E29DF /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		7EC75F6B1F38EA41004E29DF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ../MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,7 +67,8 @@
 				7E3E6BD21F38DCEB00AF718C /* QuoteBuilderViewController.swift */,
 				7EC75F6B1F38EA41004E29DF /* MainViewController.swift */,
 				7E3E6BC11F38DB5700AF718C /* Main.storyboard */,
-				7EC75F681F38E472004E29DF /* Model */,
+				7EC75F621F38E447004E29DF /* APIManager.swift */,
+				7EC75F661F38E46E004E29DF /* Quote.swift */,
 				7E3E6BCF1F38DB5E00AF718C /* Supporting */,
 			);
 			path = "Quote App";
@@ -83,16 +82,6 @@
 				7E3E6BC91F38DB5700AF718C /* Info.plist */,
 			);
 			name = Supporting;
-			sourceTree = "<group>";
-		};
-		7EC75F681F38E472004E29DF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7EC75F621F38E447004E29DF /* APIManager.swift */,
-				7EC75F641F38E464004E29DF /* Photo.swift */,
-				7EC75F661F38E46E004E29DF /* Quote.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +157,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EC75F6C1F38EA41004E29DF /* MainViewController.swift in Sources */,
-				7EC75F651F38E464004E29DF /* Photo.swift in Sources */,
 				7E3E6BD11F38DC4800AF718C /* CustomTableViewCell.swift in Sources */,
 				7E3E6BD31F38DCEB00AF718C /* QuoteBuilderViewController.swift in Sources */,
 				7EC75F631F38E447004E29DF /* APIManager.swift in Sources */,

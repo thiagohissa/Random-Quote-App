@@ -128,8 +128,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="I0i-en-vEB" id="jZw-XA-quw"/>
-                                    <outlet property="delegate" destination="I0i-en-vEB" id="2JX-qI-Uq4"/>
+                                    <outlet property="dataSource" destination="I0i-en-vEB" id="wGg-lF-O7f"/>
+                                    <outlet property="delegate" destination="I0i-en-vEB" id="rfT-gi-VR2"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -150,7 +150,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="myTableView" destination="Pwe-n7-Zbd" id="Njz-M3-E0D"/>
+                        <outlet property="myTableView" destination="Pwe-n7-Zbd" id="znr-vf-4hP"/>
                         <segue destination="dHC-qB-U2N" kind="show" identifier="SegueToQuoteBuilder" id="7In-fJ-Yh4"/>
                     </connections>
                 </viewController>

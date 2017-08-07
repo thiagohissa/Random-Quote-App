@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddQuoteToTable {
-    func greeting(message: String)
+    func saveQuote(quoteText: String, quoteAuthor: String, quotePhoto: UIImage)
 }
 
 class QuoteBuilderViewController: UIViewController, AddQuoteToTable {
@@ -24,7 +24,7 @@ class QuoteBuilderViewController: UIViewController, AddQuoteToTable {
     
     var apiManager = APIManager()
     
-    var delegate: AddQuoteToTable? = MainViewController()
+    var delegate: AddQuoteToTable?
     
     
     
@@ -52,7 +52,7 @@ class QuoteBuilderViewController: UIViewController, AddQuoteToTable {
     }
     
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
-        greeting(message: "Hello")
+        saveQuote(quoteText:self.quoteText.text! , quoteAuthor:self.quoteAuthor.text! , quotePhoto: self.quoteImage.image!)
     }
     
     
@@ -62,9 +62,11 @@ class QuoteBuilderViewController: UIViewController, AddQuoteToTable {
     
     //MARK: AddQuoteToTable Protocol
     
-    func greeting(message: String){
-        delegate?.greeting(message: message)
+    func saveQuote(quoteText: String, quoteAuthor: String, quotePhoto: UIImage){
+        delegate?.saveQuote(quoteText:quoteText , quoteAuthor:quoteAuthor , quotePhoto: quotePhoto)
+        navigationController?.dismiss(animated: true, completion: nil)
     }
+
     
     
     
