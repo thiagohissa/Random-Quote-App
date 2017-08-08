@@ -13,13 +13,5 @@ import RealmSwift
 class Quote: Object {
    dynamic var quoteText = ""
    dynamic var quoteAuthor = ""
- //  dynamic var imageData = nil
-   //var quotePhoto: UIImage?
-    
-//    init(quoteText: String, quoteAuthor: String, quotePhoto:UIImage) {
-//        self.quoteText = quoteText
-//        self.quoteAuthor = quoteAuthor
-//        self.quotePhoto = quotePhoto
-//    }
-    
+   dynamic var imageData: NSData = NSData()
 }

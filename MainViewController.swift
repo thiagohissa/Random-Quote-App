@@ -13,7 +13,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var myTableView: UITableView!
     var apiManager = APIManager()
-   // var arrayOfQuotes: [Quote] = []
     
     let realm = try! Realm() // [1]
     var arrayOfQuotes: Results<Quote> { // [2]
@@ -47,13 +46,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK: AddQuoteToTable Protocol
     func saveQuote(quoteText: String, quoteAuthor: String, quotePhoto: UIImage){
-//        let newQuote = Quote.init(quoteText: quoteText,
-//                                  quoteAuthor: quoteAuthor,
-//                                  quotePhoto: quotePhoto)
-//        self.arrayOfQuotes.append(newQuote)
+
         let newQuote = Quote()
         newQuote.quoteText = quoteText
         newQuote.quoteAuthor = quoteAuthor
+        newQuote.imageData = UIImagePNGRepresentation(quotePhoto)! as NSData
         
         try! realm.write{
             realm.add(newQuote)

@@ -32,6 +32,8 @@ class QuoteBuilderViewController: UIViewController, AddQuoteToTable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        quoteText.lineBreakMode = .byWordWrapping
+        quoteText.numberOfLines = 3
         generateQuote()
         generateImage()
     }
