@@ -26,5 +26,12 @@ class CustomTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    @IBAction func shareButton(_ sender: UIButton) {
+        print(self.authorLabel)
+        print(self.quoteLabel)
+    }
+    
+    
 
 }
